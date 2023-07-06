@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Auth;
 Route::any('/maintenance', [DomainController::class, 'index'])->where('any', '.*');
 
 
-Route::domain('localhost')->group(function () {
+Route::domain('maintenance-manager.block-stars-dev.com')->group(function () {
     Auth::routes();
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::post('/update/{projectId}', [App\Http\Controllers\DomainController::class, 'update'])->name('domain.update');
